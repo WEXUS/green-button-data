@@ -71,6 +71,8 @@ describe GreenButtonData::Parser::UsageSummary do
       expect(subject.cost_additional_detail_last_periods.first.value).to eq 106120.6
       expect(subject.cost_additional_detail_last_periods.first.uom).to eq :Wh
       expect(subject.cost_additional_detail_last_periods.first.note).to eq 'Total Winter Partial Peak Usage'
+      expect(subject.cost_additional_detail_last_periods.first.item_period.duration).to eq 2505600
+      expect(subject.cost_additional_detail_last_periods.first.item_period.start).to eq 1434006000
     end
 
     it "should parse quality of reading" do
